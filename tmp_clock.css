@@ -1,0 +1,11 @@
+.contianer1_greet {
+  font-size: 50px;
+}
+
+.container1_clock {
+  font-size: 50px;
+}
+
+.greet_input:hover {
+  background-color: #fafaf2;
+}
