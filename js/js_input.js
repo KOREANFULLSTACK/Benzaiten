@@ -12,9 +12,7 @@ function enterKey(event) {
     }
     INPUTVALUE.style.display = "none";
     localStorage.setItem("userName", userName);
-    setText.innerText = `ようこそ、${userName}ちゃん❕`;
   }
 }
 
 function init() {}
-init();

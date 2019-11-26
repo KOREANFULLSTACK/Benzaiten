@@ -7,23 +7,29 @@
 
   <head>
     <body>
-      <header>弁財天</header>
       <!-- First conatiner-->
       <div class="container1">
+        <div class="container1_title">
+          <header>弁財天</header>
+        </div>
+
+        <div class="container1_date">
+          00/00
+        </div>
         <div class="container1_clock">
           <h1>00:00</h1>
         </div>
 
         <div class="greet">
-          <div>
+          <div class="grret">
             <input
               type="text"
               class="greet_input"
               placeholder="君の名は"
-              onkeypress="enterKey()"
+              onkeypress="enterKey(event)"
             />
+            <h1></h1>
           </div>
-          <h1></h1>
         </div>
       </div>
 
@@ -42,6 +48,8 @@
         </div>
       </div>
 
+      <script src="C:\Users\김영민\Desktop\To be FS\tmp\Benzaiten\js\js_greeting.js"></script>
+      <script src="C:\Users\김영민\Desktop\To be FS\tmp\Benzaiten\js\js_date.js"></script>
       <script src="C:\Users\김영민\Desktop\To be FS\tmp\Benzaiten\js\js_clock.js"></script>
       <script src="C:\Users\김영민\Desktop\To be FS\tmp\Benzaiten\js\js_input.js"></script>
     </body>
