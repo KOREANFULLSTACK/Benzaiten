@@ -11,8 +11,15 @@
 
     <div class="pannel">
       <div class="pannel_Input">
-        <input type="text" class="input" placeholder="what to do" />
-        <button class="add" onclick="clickEvent()">追加</button>
+        <input
+          type="text"
+          class="input"
+          placeholder="what to do"
+          onkeypress="enterKey(event)"
+        />
+        <button onclick="clickEvent()">
+          追加
+        </button>
       </div>
 
       <div class="pannel_List">
