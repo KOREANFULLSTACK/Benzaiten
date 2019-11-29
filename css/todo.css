@@ -6,6 +6,8 @@ header {
   justify-content: center;
 }
 
+@import url("https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap");
+
 .pannel_Input {
   height: 150px;
   display: flex;

@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap");
+
+.father {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cont_reserve {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cont_reserve > input {
+  height: 50px;
+  width: 350px;
+  padding-left: 10px;
+  margin: 10px;
+}
