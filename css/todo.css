@@ -7,6 +7,7 @@ header {
 }
 
 @import url("https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap");
+@import "tmp_reset.css";
 
 .pannel_Input {
   height: 150px;

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap");
-
+@import "tmp_reset.css";
 .father {
   height: 400px;
   display: flex;

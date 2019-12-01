@@ -11,7 +11,7 @@ function reserve() {
     (PRICE = document.querySelector(".input_price").value);
 
   tmp = {
-    name: NAME.value,
+    name: document.querySelector(".input_name").value,
     phone: document.querySelector(".input_phone").value,
     people: document.querySelector(".input_people").value,
     date: document.querySelector(".input_date").value,
@@ -19,6 +19,11 @@ function reserve() {
   };
 
   loadReserve(tmp);
+  (document.querySelector(".input_name").value = ""),
+    (document.querySelector(".input_phone").value = ""),
+    (document.querySelector(".input_people").value = ""),
+    (document.querySelector(".input_date").value = ""),
+    (document.querySelector(".input_price").value = "");
 }
 
 function loadReserve(tmp) {
@@ -27,14 +32,10 @@ function loadReserve(tmp) {
 
   if (str_reserve) {
     get_json = JSON.parse(str_reserve); //get_json : Oject , arr_reserve : String
+    for (i = 0; i < get_json.length; i++) arr_reserve.push(get_json[i]);
+    arr_reserve.push(tmp);
+  } else arr_reserve.push(tmp);
 
-    for (i = 0; i < get_json.length; i++) {
-      arr_reserve.push(get_json[i]);
-    }
-    arr_reserve.push(tmp);
-  } else {
-    arr_reserve.push(tmp);
-  }
   localStorage.setItem("RESERVE", JSON.stringify(arr_reserve));
 }
 
@@ -47,4 +48,9 @@ function Init() {
   SUBMIT.addEventListener("click", reserve);
 }
 
+function showReserve() {
+  reserveNow = localStorage.getItem("RESERVE");
+  obj_json = JSON.parse(reserveNow);
+  for (i = 0; i < obj_json.length; i++) {}
+}
 Init();
