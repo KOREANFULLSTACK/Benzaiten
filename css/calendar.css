@@ -1,2 +1,22 @@
 @import url("https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap");
 @import "tmp_reset.css";
+
+.calendar {
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+td {
+  font-size: 30px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.title_calendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

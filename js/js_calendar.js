@@ -1,33 +1,89 @@
 calendar = document.querySelector(".calendar");
+title = document.querySelector(".title_calendar");
+
+row0 = document.querySelector(".row0");
 row1 = document.querySelector(".row1");
 row2 = document.querySelector(".row2");
 row3 = document.querySelector(".row3");
 row4 = document.querySelector(".row4");
 row5 = document.querySelector(".row5");
+
 normal_date = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 standard_day = [`일`, `월`, `화`, `수`, `목`, `금`, `토`];
 
 date = new Date();
-whatyear = date.getYear() - 100;
-whatmonth = date.getMonth() - 1;
-whatdate = date.getDate();
-whatday = date.getDay();
+nowyear = date.getYear() + 1900;
+nowmon = date.getMonth();
+nowdate = date.getDate();
+nowday = date.getDay();
 
-/* function get_firstday(year, month, date, day) {
-  tmp = (date - 1) % 7;
+function show_clear() {
+  row1.remove();
+  row2.remove();
+  row3.remove();
+  row4.remove();
+  row5.remove();
+}
 
-  if (whatday - tmp < 0) {
-    if (day === 0) firstday = 7 - tmp;
-    else firstday = day - tmp;
-  } else firstday = day - tmp;
+function show_left() {
+  show_clear();
+  if (nowmon === 1) {
+    left_month = 12;
+    left_year = nowyear - 1;
+  }
+  left_year = nowyear;
+  left_month = nowmon - 1;
+  left_day = new Date(`${left_year}-${left_month}-01`).getDay();
+  get_calendar(left_year, left_month, left_day, nowdate);
+  nowyear = left_year;
+  nowmon = left_month;
+  nowday = left_day;
 
-  return firstday;
-} */
+  console.log(nowyear + "`" + nowmon + `+` + nowday);
+}
+function show_right() {
+  console.log(nowyear + "`" + nowmon + `+` + nowday);
+  if (nowmon === 12) {
+    right_month = 1;
+    right_year = nowyear + 1;
+  }
+  right_year = nowyear;
+  right_month = nowmon + 1;
+  right_day = new Date(`${right_year}-${right_month}-01`).getDay();
+  get_calendar(right_year, right_month, right_day, nowdate);
+  nowyear = right_year;
+  nowmon = right_month;
+  nowday = right_day;
 
-function getDate(year, month, date, day) {
+  console.log(nowyear + "`" + nowmon + `+` + nowday);
+}
+
+function make_cal_head(year, month, day, date) {
+  tmp = document.createElement("button");
+  tmp.innerText = "<";
+  tmp.addEventListener("click", show_left);
+  title.appendChild(tmp);
+
+  tmp = document.createElement("td");
+  tmp.innerText = `${year} ${month + 1} ${date} ${standard_day[day]}`;
+  title.appendChild(tmp);
+
+  tmp = document.createElement("button");
+  tmp.innerText = ">";
+  tmp.addEventListener("click", show_right);
+  title.appendChild(tmp);
+
+  for (k = 0; k < 7; k++) {
+    tmp0 = document.createElement("td");
+
+    tmp0.innerText = standard_day[k];
+    row0.appendChild(tmp0);
+  }
+}
+
+function get_calendar(year, month, day, date) {
   firstday = day; //1일의 요일
 
-  //고치기
   for (t = 0; t < firstday; t++) {
     tmp1 = document.createElement("td");
     tmp1.id = t;
@@ -66,9 +122,20 @@ function getDate(year, month, date, day) {
 }
 
 function init() {
-  /* getDate(whatyear, whatmonth, whatdate, whatday); */
   /* debugger; */
-  getDate(2019, 10, 1, new Date("2019-10-01").getDay());
+  make_cal_head(
+    nowyear,
+    nowmon,
+    new Date(`${nowyear}-${nowmon}-01`).getDay(),
+    nowdate
+  );
+
+  get_calendar(
+    nowyear,
+    nowmon,
+    new Date(`${nowyear}-${nowmon + 1}-01`).getDay(),
+    nowdate
+  );
 }
 
 init();
