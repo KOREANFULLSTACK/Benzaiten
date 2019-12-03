@@ -1,8 +1,65 @@
 @import url("https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap");
 @import "tmp_reset.css";
+body {
+  font-family: "Kosugi Maru", sans-serif;
+}
+
+.left {
+  float: left;
+  width: 60%;
+  height: 800px;
+}
+
+.today {
+  float: top;
+  height: 40%;
+}
+
+.today_real {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.today_real > h {
+  font-size: 50px;
+  margin: 10px;
+}
+
+.today_real > p {
+  font-size: 45px;
+  margin: 10px;
+}
+.todoList {
+  float: bottom;
+  height: 60%;
+}
+
+.todoList_real {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  float: right;
+  width: 40%;
+}
 
 .calendar {
-  height: 700px;
+  height: 800px;
+  display: flex;
+
+  align-items: center;
+}
+
+tbody {
+  float: center;
+}
+
+.calendar_head {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,9 +71,6 @@ td {
   padding: 20px;
   text-align: center;
 }
-
-.title_calendar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+td:hover {
+  background-color: #94cdfa;
 }
