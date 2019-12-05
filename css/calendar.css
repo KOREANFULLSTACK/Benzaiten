@@ -4,19 +4,22 @@ body {
   font-family: "Kosugi Maru", sans-serif;
 }
 
+.screen {
+  display: flex;
+}
+
 .left {
-  float: left;
   width: 60%;
-  height: 800px;
 }
 
 .today {
-  float: top;
-  height: 40%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .today_real {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,10 +35,6 @@ body {
   font-size: 45px;
   margin: 10px;
 }
-.todoList {
-  float: bottom;
-  height: 60%;
-}
 
 .todoList_real {
   display: flex;
@@ -44,19 +43,16 @@ body {
 }
 
 .right {
-  float: right;
   width: 40%;
 }
 
 .calendar {
-  height: 800px;
+  height: 130%;
   display: flex;
-
   align-items: center;
 }
 
 tbody {
-  float: center;
 }
 
 .calendar_head {

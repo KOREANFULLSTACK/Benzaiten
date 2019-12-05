@@ -24,14 +24,27 @@ body {
   display: flex;
   justify-content: center;
 }
-.grret {
+.greet1 {
   display: flex;
   justify-content: center;
 }
 
 .container2 {
-  height: 300px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+}
+
+.content_Today {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content_Reserve {
+  width: 50%;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }

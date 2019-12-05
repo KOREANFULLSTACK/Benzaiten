@@ -24,8 +24,8 @@ function color_today(nowdate) {
 }
 
 function show_today(date, day) {
-  today_day.innerText = `${standard_day[day]}요일`;
   today_date.innerText = `${date}일`;
+  today_day.innerText = `${standard_day[day]}요일`;
 }
 
 function show_clear() {
@@ -55,6 +55,7 @@ function show_left() {
   nowyear = left_year;
   nowmon = left_month;
   nowday = left_day;
+  year_month_date = `${nowyear}-${nowmon + 1}-${nowdate}`;
 }
 function show_right() {
   show_clear();
@@ -72,6 +73,7 @@ function show_right() {
   nowyear = right_year;
   nowmon = right_month;
   nowday = right_day;
+  year_month_date = `${nowyear}-${nowmon + 1}-${nowdate}`;
 }
 
 function make_cal_head(year, month, day, date) {
@@ -180,12 +182,20 @@ function get_calendar(year, month, day, date) {
 }
 
 function click_date() {
-  target = event.target.id;
-  target.style.backgroundColor = "#94cdfa";
+  tmp_arr = document.querySelectorAll("td");
+  for (tmp = 8; tmp < tmp_arr.length; tmp++) {
+    if (tmp_arr[tmp].style.backgroundColor !== "white") {
+      tmp_arr[tmp].style.backgroundColor = "white";
+    }
+  }
+  target_date = event.target;
+  target_date.style.backgroundColor = "#94cdfa";
 
-  //타겟변경 색깔색칠 만들기
-  //left screen 변하는 거
-  // 할일컨텐츠만들기
+  nowdate = target_date.id;
+  day = new Date(`${nowyear}-${nowmon + 1}-${nowdate}`).getDay();
+  year_month_date = `${nowyear}-${nowmon + 1}-${nowdate}`;
+  show_today(nowdate, day);
+  visible(year_month_date);
 }
 
 function init() {

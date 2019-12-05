@@ -4,10 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <script
+      src="https://kit.fontawesome.com/e41b5767ec.js"
+      crossorigin="anonymous"
+    ></script>
+
     <link
       rel="stylesheet"
       href="C:\Users\김영민\Desktop\To be FS\tmp\Benzaiten\css\calendar.css"
     />
+    <link
+      rel="stylesheet"
+      href="C:\Users\김영민\Desktop\To be FS\tmp\Benzaiten\css\todo.css"
+    />
+
     <title>Document</title>
   </head>
   <body>
@@ -19,8 +30,23 @@
             <p></p>
           </div>
         </div>
-        <div class="todoList">
-          <div class="todoList_real">할일없느ㅜㅜㅜ</div>
+        <div class="todoList"></div>
+        <div class="pannel">
+          <div class="pannel_Input">
+            <input
+              type="text"
+              class="input"
+              placeholder="何をする予定ですか？"
+              onkeypress="enterKey(event)"
+            />
+            <button class="add" onclick="clickEvent()">
+              追加
+            </button>
+          </div>
+
+          <div class="pannel_List">
+            <ul class="fatherList"></ul>
+          </div>
         </div>
       </div>
 
@@ -32,5 +58,6 @@
     </div>
 
     <script src="C:\Users\김영민\Desktop\To be FS\tmp\Benzaiten\js\js_calendar.js"></script>
+    <script src="C:\Users\김영민\Desktop\To be FS\tmp\Benzaiten\js\js_todo.js"></script>
   </body>
 </html>
