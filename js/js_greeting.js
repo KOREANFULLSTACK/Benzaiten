@@ -9,7 +9,7 @@ function visible() {
   if (userName === "null") {
   } else {
     input.style.display = "none";
-    Text.innerText = `ようこそ、${userName}ちゃん❕`;
+    Text.innerText = `ようこそ ${userName}ちゃん❕`;
   }
 }
 

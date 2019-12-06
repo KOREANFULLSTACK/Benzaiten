@@ -34,7 +34,7 @@ function createList(text_todo) {
   i.className = "fas fa-times";
   btn_del.type = "button";
   btn_del.addEventListener("click", target_remove);
-  btn_del.value = text_todo;
+
   btn_del.appendChild(i);
   btn_del.style.boderRadius = "8px";
 
@@ -55,7 +55,7 @@ function target_remove(event) {
 
   Json_arr = JSON.parse(localStorage.getItem(year_month_date));
   for (j = 0; j < Json_arr.length; j++) {
-    if (remove_target.value === Json_arr[j]) {
+    if (remove_target.parentNode.textContent === Json_arr[j]) {
       remove_target.parentNode.remove(remove_target);
       Json_arr.splice(j, 1);
       localStorage.setItem(year_month_date, JSON.stringify(Json_arr));

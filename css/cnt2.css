@@ -1,0 +1,20 @@
+@import "reset.css";
+
+.pannel_List {
+  font-size: 30px;
+}
+
+.today_todo {
+  font-size: 20px;
+  padding-top: 20px;
+}
+
+.today_todo > li {
+  margin: 10px;
+  width: 350px;
+  height: 40px;
+}
+
+.content_Reserve {
+  font-size: 30px;
+}

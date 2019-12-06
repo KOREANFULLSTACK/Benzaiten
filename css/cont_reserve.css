@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap");
-@import "tmp_reset.css";
+@import "reset.css";
 body {
   font-family: "Kosugi Maru", sans-serif;
 }

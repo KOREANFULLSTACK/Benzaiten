@@ -4,7 +4,7 @@ today_day = document.querySelector("p");
 today_date = document.querySelector("h");
 
 normal_date = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-standard_day = [`일`, `월`, `화`, `수`, `목`, `금`, `토`];
+standard_day = [`日`, `月`, `火`, `水`, `木`, `金`, `土`];
 
 date = new Date();
 nowyear = date.getYear() + 1900;
@@ -24,8 +24,8 @@ function color_today(nowdate) {
 }
 
 function show_today(date, day) {
-  today_date.innerText = `${date}일`;
-  today_day.innerText = `${standard_day[day]}요일`;
+  today_date.innerText = `${date}日`;
+  today_day.innerText = `${standard_day[day]}曜日`;
 }
 
 function show_clear() {
@@ -87,7 +87,7 @@ function make_cal_head(year, month, day, date) {
   title.appendChild(tmp);
 
   tmp = document.createElement("td");
-  tmp.innerText = `${year} ${month + 1}월 `;
+  tmp.innerText = `${year} ${month + 1}月 `;
   title.appendChild(tmp);
 
   tmp = document.createElement("button");
