@@ -10,6 +10,8 @@ header {
 @import "reset.css";
 body {
   font-family: "Kosugi Maru", sans-serif;
+  background-color: #7e7e7e;
+  color: #eae5e5;
 }
 
 .pannel_Input {

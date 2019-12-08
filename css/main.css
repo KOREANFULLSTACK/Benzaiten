@@ -5,6 +5,8 @@
 
 body {
   font-family: "Kosugi Maru", sans-serif;
+  background-color: #7e7e7e;
+  color: #eae5e5;
 }
 
 .container1 {
@@ -17,24 +19,6 @@ body {
   align-items: center;
   margin: 10px;
 }
-
-/* 
-.container1_title {
-  display: flex;
-}
-.container1_date {
-  display: flex;
-  justify-content: center;
-}
-.container1_clock {
-  display: flex;
-  justify-content: center;
-}
-.greet1 {
-  display: flex;
-  justify-content: center;
-} */
-
 .container2 {
   display: flex;
   justify-content: center;
