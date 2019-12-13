@@ -8,10 +8,22 @@ header {
 
 @import url("https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap");
 @import "reset.css";
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 body {
+  animation: fadeIn 3s ease-in-out;
+  background-image: url("3.jpg");
+  background-size: 90%;
   font-family: "Kosugi Maru", sans-serif;
   background-color: #7e7e7e;
-  color: #eae5e5;
+  color: #faebd7;
 }
 
 .pannel_Input {
@@ -27,9 +39,16 @@ body {
   font-size: 25px;
   text-align: center;
   border-radius: 8px;
+  background-color: #333333;
+  color: #333333;
+  border-style: none;
+  transition: all 0.3s ease-in-out;
+}
+input:hover {
+  background-color: #faebd7;
 }
 .fatherList > li {
-  width: 350px;
+  width: 700px;
   height: 40px;
   font-size: 25px;
   border-radius: 8px;
@@ -42,9 +61,12 @@ button {
   text-align: center;
   background-color: #e7e7e7;
   border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
 }
-button :hover {
-  background-color: white;
+
+button:hover {
+  background-color: #f783ac;
 }
 .pannel_List {
   display: flex;

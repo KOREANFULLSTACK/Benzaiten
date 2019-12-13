@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap");
 @import "reset.css";
 
 .pannel_List {
@@ -10,9 +11,25 @@
 }
 
 .today_todo > li {
+  font-size: 25px;
+  border-radius: 8px;
   margin: 10px;
-  width: 350px;
+  width: 700px;
   height: 40px;
+}
+
+button {
+  margin: 10px;
+  font-size: 22px;
+  text-align: center;
+  background-color: #e7e7e7;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #f783ac;
 }
 
 .content_Reserve {

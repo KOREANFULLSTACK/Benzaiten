@@ -10,16 +10,10 @@
       crossorigin="anonymous"
     ></script>
 
-    <link
-      rel="stylesheet"
-      href="C:\Users\김영민\Desktop\To be FS\tmp\Benzaiten\css\calendar.css"
-    />
-    <link
-      rel="stylesheet"
-      href="C:\Users\김영민\Desktop\To be FS\tmp\Benzaiten\css\todo.css"
-    />
+    <link rel="stylesheet" href="..\css\calendar.css" />
+    <link rel="stylesheet" href="..\css\todo.css" />
 
-    <title>Document</title>
+    <title>Calendar</title>
   </head>
   <body>
     <div class="screen">
@@ -36,11 +30,11 @@
             <input
               type="text"
               class="input"
-              placeholder="何をする予定ですか？"
+              placeholder="予約・すべき"
               onkeypress="enterKey(event)"
             />
             <button class="add" onclick="clickEvent()">
-              追加
+              <i class="fas fa-plus fa-2x"></i>
             </button>
           </div>
 
@@ -51,13 +45,17 @@
       </div>
 
       <div class="right">
+        <div class="weather">
+          <p class="p_weather"></p>
+        </div>
         <table class="calendar">
           <tbody></tbody>
         </table>
       </div>
     </div>
 
-    <script src="C:\Users\김영민\Desktop\To be FS\tmp\Benzaiten\js\js_calendar.js"></script>
-    <script src="C:\Users\김영민\Desktop\To be FS\tmp\Benzaiten\js\js_todo.js"></script>
+    <script src="..\js\js_calendar.js"></script>
+    <script src="..\js\js_todo.js"></script>
+    <script src="..\js\js_weather.js"></script>
   </body>
 </html>

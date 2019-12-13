@@ -3,10 +3,21 @@
 @import "header.css";
 @import "cnt2.css";
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
+  animation: fadeIn 5s;
+  background-image: url("2.jpg");
+  background-size: 100%;
   font-family: "Kosugi Maru", sans-serif;
-  background-color: #7e7e7e;
-  color: #eae5e5;
+  color: #faebd7;
 }
 
 .container1 {
@@ -28,13 +39,30 @@ body {
 .content_Today {
   width: 50%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: flex-end;
 }
-
+.list_icon {
+  text-align: center;
+}
 .content_Reserve {
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.pan_pencil > i {
+  padding: 30px;
+  margin: 15px;
+  border-radius: 30%;
+}
+
+.pan_pencil > i,
+button {
+  transition: transform 0.5s ease-in-out;
+}
+.pan_pencil > i:hover {
+  transform: rotate(1turn) scale(2, 2) /* translate(100%, 100%) */;
+  background-color: #ffc0cb;
 }

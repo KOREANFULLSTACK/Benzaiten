@@ -1,0 +1,68 @@
+<html>
+  <meta charset="utf-8" />
+  <head>
+    <meta
+      name="naver-site-verification"
+      content="ec4cee45c012c470260b707b01967ab9ba67e48f"
+    />
+    <link rel="stylesheet" href="css\main.css" />
+
+    <script
+      src="https://kit.fontawesome.com/e41b5767ec.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <body>
+      <title>Remember me</title>
+      <!-- First conatiner-->
+      <div class="container1">
+        <div class="container1_title"></div>
+
+        <div class="container1_clock">
+          <h1>00:00</h1>
+        </div>
+        <div class="container1_date">
+          00/00
+        </div>
+        <div class="greet">
+          <div class="greet1">
+            <input
+              type="text"
+              class="greet_input"
+              placeholder="君の名は"
+              onkeypress="enterKey(event)"
+            />
+            <h1></h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second conatiner-->
+      <div class="container2">
+        <div class="content_Today">
+          <div class="pannel_List">
+            <div class="list_icon">
+              <i class="fas fa-list-ol fa-5x"></i>
+            </div>
+
+            <ul class="today_todo"></ul>
+          </div>
+        </div>
+
+        <div class="content_Reserve">
+          <a href="pages\see.html">
+            <div class="pan_pencil">
+              <i class="fas fa-pencil-alt fa-5x"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <script src="js\js_greeting.js"></script>
+      <script src="js\js_date.js"></script>
+      <script src="js\js_clock.js"></script>
+      <script src="js\js_input.js"></script>
+      <script src="js\js_main_todo.js"></script>
+    </body>
+  </head>
+</html>

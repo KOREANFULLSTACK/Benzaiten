@@ -82,10 +82,13 @@ function show_right() {
 function make_cal_head(year, month, day, date) {
   title = document.createElement("tr");
   title.className = "calendar_head";
+
   tbody.appendChild(title);
 
+  left_i = document.createElement("i");
+  left_i.className = `fas fa-caret-left`;
   tmp = document.createElement("button");
-  tmp.innerText = "<";
+  tmp.appendChild(left_i);
   tmp.addEventListener("click", show_left);
   title.appendChild(tmp);
 
@@ -93,8 +96,10 @@ function make_cal_head(year, month, day, date) {
   tmp.innerText = `${year} ${month + 1}月 `;
   title.appendChild(tmp);
 
+  right_i = document.createElement("i");
+  right_i.className = `fas fa-caret-right`;
   tmp = document.createElement("button");
-  tmp.innerText = ">";
+  tmp.appendChild(right_i);
   tmp.addEventListener("click", show_right);
   title.appendChild(tmp);
 
@@ -117,6 +122,9 @@ function make_cal_head(year, month, day, date) {
 
 function get_calendar(year, month, day, date) {
   firstday = day; //1일의 요일
+
+  getupStr = "時に起きた";
+  setTime = "08";
 
   t1 = document.createElement("tr");
   t1.className = "row1";
@@ -161,11 +169,42 @@ function get_calendar(year, month, day, date) {
       }
       tmp1.addEventListener("click", click_date);
 
-      year_month_date = `${nowyear}-${nowmon + 1}-${tmp1.id}`; //오늘날짜
+      year_month_date = `${year}-${month + 1}-${tmp1.id}`; //오늘날짜
       if (
-        localStorage.getItem(year_month_date) &&
+        localStorage.getItem(year_month_date) !== null &&
         localStorage.getItem(year_month_date) !== "[]"
       ) {
+        for (
+          n = 0;
+          n < JSON.parse(localStorage.getItem(year_month_date)).length;
+          n++
+        ) {
+          if (JSON.parse(localStorage.getItem(year_month_date))[n] === "X") {
+            tmp1_div1 = document.createElement("div");
+            tmp1_i1 = document.createElement("i");
+            tmp1_div1.className = "fas fa-skull";
+            tmp1_div1.appendChild(tmp1_i1);
+            tmp1.appendChild(tmp1_div1);
+          } else if (
+            JSON.parse(localStorage.getItem(year_month_date))[n].indexOf(
+              getupStr
+            )
+          ) {
+            index = JSON.parse(localStorage.getItem(year_month_date))[
+              n
+            ].indexOf(getupStr);
+            getupTime =
+              JSON.parse(localStorage.getItem(year_month_date))[n][index - 2] +
+              JSON.parse(localStorage.getItem(year_month_date))[n][index - 1];
+            if (getupTime <= setTime) {
+              tmp1_div2 = document.createElement("div");
+              tmp1_i2 = document.createElement("i");
+              tmp1_div2.className = "fas fa-clock";
+              tmp1_div2.appendChild(tmp1_i2);
+              tmp1.appendChild(tmp1_div2);
+            }
+          }
+        }
         tmp1_div = document.createElement("div");
         tmp1_i = document.createElement("i");
         tmp1_div.className = "fas fa-exclamation";
@@ -186,11 +225,42 @@ function get_calendar(year, month, day, date) {
       }
       tmp2.addEventListener("click", click_date);
       //
-      year_month_date = `${nowyear}-${nowmon + 1}-${tmp2.id}`; //오늘날짜
+      year_month_date = `${year}-${month + 1}-${tmp2.id}`; //오늘날짜
       if (
         localStorage.getItem(year_month_date) &&
         localStorage.getItem(year_month_date) !== "[]"
       ) {
+        for (
+          n = 0;
+          n < JSON.parse(localStorage.getItem(year_month_date)).length;
+          n++
+        ) {
+          if (JSON.parse(localStorage.getItem(year_month_date))[n] === "X") {
+            tmp2_div1 = document.createElement("div");
+            tmp2_i1 = document.createElement("i");
+            tmp2_div1.className = "fas fa-skull";
+            tmp2_div1.appendChild(tmp2_i1);
+            tmp2.appendChild(tmp2_div1);
+          } else if (
+            JSON.parse(localStorage.getItem(year_month_date))[n].indexOf(
+              getupStr
+            )
+          ) {
+            index = JSON.parse(localStorage.getItem(year_month_date))[
+              n
+            ].indexOf(getupStr);
+            getupTime =
+              JSON.parse(localStorage.getItem(year_month_date))[n][index - 2] +
+              JSON.parse(localStorage.getItem(year_month_date))[n][index - 1];
+            if (getupTime <= setTime) {
+              tmp2_div2 = document.createElement("div");
+              tmp2_i2 = document.createElement("i");
+              tmp2_div2.className = "fas fa-clock";
+              tmp2_div2.appendChild(tmp2_i2);
+              tmp2.appendChild(tmp2_div2);
+            }
+          }
+        }
         tmp2_div = document.createElement("div");
         tmp2_i = document.createElement("i");
         tmp2_div.className = "fas fa-exclamation";
@@ -211,16 +281,50 @@ function get_calendar(year, month, day, date) {
       }
       tmp3.addEventListener("click", click_date);
 
-      year_month_date = `${nowyear}-${nowmon + 1}-${tmp3.id}`; //오늘날짜
+      year_month_date = `${year}-${month + 1}-${tmp3.id}`; //오늘날짜
       if (
         localStorage.getItem(year_month_date) &&
         localStorage.getItem(year_month_date) !== "[]"
       ) {
-        tmp3_div = document.createElement("div");
-        tmp3_i = document.createElement("i");
-        tmp3_div.className = "fas fa-exclamation";
-        tmp3_div.appendChild(tmp3_i);
-        tmp3.appendChild(tmp3_div);
+        //!출력
+        for (
+          n = 0;
+          n < JSON.parse(localStorage.getItem(year_month_date)).length;
+          n++
+        ) {
+          if (JSON.parse(localStorage.getItem(year_month_date))[n] === "X") {
+            //해골출력
+            tmp3_div1 = document.createElement("div");
+            tmp3_i1 = document.createElement("i");
+            tmp3_div1.className = "fas fa-skull";
+            tmp3_div1.appendChild(tmp3_i1);
+            tmp3.appendChild(tmp3_div1);
+          } else if (
+            JSON.parse(localStorage.getItem(year_month_date))[n].indexOf(
+              getupStr
+            )
+          ) {
+            index = JSON.parse(localStorage.getItem(year_month_date))[
+              n
+            ].indexOf(getupStr);
+            getupTime =
+              JSON.parse(localStorage.getItem(year_month_date))[n][index - 2] +
+              JSON.parse(localStorage.getItem(year_month_date))[n][index - 1];
+            if (getupTime <= setTime) {
+              tmp3_div2 = document.createElement("div");
+              tmp3_i2 = document.createElement("i");
+              tmp3_div2.className = "fas fa-clock";
+              tmp3_div2.appendChild(tmp2_i2);
+              tmp3.appendChild(tmp3_div2);
+            }
+          } else {
+            tmp3_div = document.createElement("div");
+            tmp3_i = document.createElement("i");
+            tmp3_div.className = "fas fa-exclamation";
+            tmp3_div.appendChild(tmp3_i);
+            tmp3.appendChild(tmp3_div);
+          }
+        }
       }
 
       t3.appendChild(tmp3);
@@ -236,11 +340,42 @@ function get_calendar(year, month, day, date) {
       }
       tmp4.addEventListener("click", click_date);
 
-      year_month_date = `${nowyear}-${nowmon + 1}-${tmp4.id}`; //오늘날짜
+      year_month_date = `${year}-${month + 1}-${tmp4.id}`; //오늘날짜
       if (
         localStorage.getItem(year_month_date) &&
         localStorage.getItem(year_month_date) !== "[]"
       ) {
+        for (
+          n = 0;
+          n < JSON.parse(localStorage.getItem(year_month_date)).length;
+          n++
+        ) {
+          if (JSON.parse(localStorage.getItem(year_month_date))[n] === "X") {
+            tmp4_div1 = document.createElement("div");
+            tmp4_i1 = document.createElement("i");
+            tmp4_div1.className = "fas fa-skull";
+            tmp4_div1.appendChild(tmp4_i1);
+            tmp4.appendChild(tmp4_div1);
+          } else if (
+            JSON.parse(localStorage.getItem(year_month_date))[n].indexOf(
+              getupStr
+            )
+          ) {
+            index = JSON.parse(localStorage.getItem(year_month_date))[
+              n
+            ].indexOf(getupStr);
+            getupTime =
+              JSON.parse(localStorage.getItem(year_month_date))[n][index - 2] +
+              JSON.parse(localStorage.getItem(year_month_date))[n][index - 1];
+            if (getupTime <= setTime) {
+              tmp4_div2 = document.createElement("div");
+              tmp4_i2 = document.createElement("i");
+              tmp4_div2.className = "fas fa-clock";
+              tmp4_div2.appendChild(tmp4_i2);
+              tmp4.appendChild(tmp4_div2);
+            }
+          }
+        }
         tmp4_div = document.createElement("div");
         tmp4_i = document.createElement("i");
         tmp4_div.className = "fas fa-exclamation";
@@ -261,11 +396,42 @@ function get_calendar(year, month, day, date) {
       }
       tmp5.addEventListener("click", click_date);
 
-      year_month_date = `${nowyear}-${nowmon + 1}-${tmp5.id}`; //오늘날짜
+      year_month_date = `${year}-${month + 1}-${tmp5.id}`; //오늘날짜
       if (
         localStorage.getItem(year_month_date) &&
         localStorage.getItem(year_month_date) !== "[]"
       ) {
+        for (
+          n = 0;
+          n < JSON.parse(localStorage.getItem(year_month_date)).length;
+          n++
+        ) {
+          if (JSON.parse(localStorage.getItem(year_month_date))[n] === "X") {
+            tmp5_div1 = document.createElement("div");
+            tmp5_i1 = document.createElement("i");
+            tmp5_div1.className = "fas fa-skull";
+            tmp5_div1.appendChild(tmp5_i1);
+            tmp5.appendChild(tmp5_div1);
+          } else if (
+            JSON.parse(localStorage.getItem(year_month_date))[n].indexOf(
+              getupStr
+            )
+          ) {
+            index = JSON.parse(localStorage.getItem(year_month_date))[
+              n
+            ].indexOf(getupStr);
+            getupTime =
+              JSON.parse(localStorage.getItem(year_month_date))[n][index - 2] +
+              JSON.parse(localStorage.getItem(year_month_date))[n][index - 1];
+            if (getupTime <= setTime) {
+              tmp5_div2 = document.createElement("div");
+              tmp5_i2 = document.createElement("i");
+              tmp5_div2.className = "fas fa-clock";
+              tmp5_div2.appendChild(tmp5_i2);
+              tmp5.appendChild(tmp5_div2);
+            }
+          }
+        }
         tmp5_div = document.createElement("div");
         tmp5_i = document.createElement("i");
         tmp5_div.className = "fas fa-exclamation";
@@ -283,11 +449,42 @@ function get_calendar(year, month, day, date) {
       }
 
       tmp6.addEventListener("click", click_date);
-      year_month_date = `${nowyear}-${nowmon + 1}-${tmp6.id}`; //오늘날짜
+      year_month_date = `${year}-${month + 1}-${tmp6.id}`; //오늘날짜
       if (
         localStorage.getItem(year_month_date) &&
         localStorage.getItem(year_month_date) !== "[]"
       ) {
+        for (
+          n = 0;
+          n < JSON.parse(localStorage.getItem(year_month_date)).length;
+          n++
+        ) {
+          if (JSON.parse(localStorage.getItem(year_month_date))[n] === "X") {
+            tmp6_div1 = document.createElement("div");
+            tmp6_i1 = document.createElement("i");
+            tmp6_div1.className = "fas fa-skull";
+            tmp6_div1.appendChild(tmp6_i1);
+            tmp6.appendChild(tmp6_div1);
+          } else if (
+            JSON.parse(localStorage.getItem(year_month_date))[n].indexOf(
+              getupStr
+            )
+          ) {
+            index = JSON.parse(localStorage.getItem(year_month_date))[
+              n
+            ].indexOf(getupStr);
+            getupTime =
+              JSON.parse(localStorage.getItem(year_month_date))[n][index - 2] +
+              JSON.parse(localStorage.getItem(year_month_date))[n][index - 1];
+            if (getupTime <= setTime) {
+              tmp6_div2 = document.createElement("div");
+              tmp6_i2 = document.createElement("i");
+              tmp6_div2.className = "fas fa-clock";
+              tmp6_div2.appendChild(tmp6_i2);
+              tmp6.appendChild(tmp6_div2);
+            }
+          }
+        }
         tmp6_div = document.createElement("div");
         tmp6_i = document.createElement("i");
         tmp6_div.className = "fas fa-exclamation";
@@ -303,7 +500,7 @@ function click_date() {
   tmp_arr = document.querySelectorAll("td");
   for (tmp = 8; tmp < tmp_arr.length; tmp++) {
     if (tmp_arr[tmp].style.backgroundColor !== "#7E7E7E") {
-      tmp_arr[tmp].style.backgroundColor = "#7E7E7E";
+      tmp_arr[tmp].style.backgroundColor = "";
     }
   }
   target_date = event.target;
