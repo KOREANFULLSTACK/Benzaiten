@@ -188,7 +188,7 @@ function get_calendar(year, month, day, date) {
           } else if (
             JSON.parse(localStorage.getItem(year_month_date))[n].indexOf(
               getupStr
-            )
+            ) !== -1
           ) {
             index = JSON.parse(localStorage.getItem(year_month_date))[
               n
@@ -244,7 +244,7 @@ function get_calendar(year, month, day, date) {
           } else if (
             JSON.parse(localStorage.getItem(year_month_date))[n].indexOf(
               getupStr
-            )
+            ) !== -1
           ) {
             index = JSON.parse(localStorage.getItem(year_month_date))[
               n
@@ -302,7 +302,7 @@ function get_calendar(year, month, day, date) {
           } else if (
             JSON.parse(localStorage.getItem(year_month_date))[n].indexOf(
               getupStr
-            )
+            ) !== -1
           ) {
             index = JSON.parse(localStorage.getItem(year_month_date))[
               n
@@ -314,17 +314,17 @@ function get_calendar(year, month, day, date) {
               tmp3_div2 = document.createElement("div");
               tmp3_i2 = document.createElement("i");
               tmp3_div2.className = "fas fa-clock";
-              tmp3_div2.appendChild(tmp2_i2);
+              tmp3_div2.appendChild(tmp3_i2);
               tmp3.appendChild(tmp3_div2);
             }
-          } else {
-            tmp3_div = document.createElement("div");
-            tmp3_i = document.createElement("i");
-            tmp3_div.className = "fas fa-exclamation";
-            tmp3_div.appendChild(tmp3_i);
-            tmp3.appendChild(tmp3_div);
           }
         }
+
+        tmp3_div = document.createElement("div");
+        tmp3_i = document.createElement("i");
+        tmp3_div.className = "fas fa-exclamation";
+        tmp3_div.appendChild(tmp3_i);
+        tmp3.appendChild(tmp3_div);
       }
 
       t3.appendChild(tmp3);
@@ -415,7 +415,7 @@ function get_calendar(year, month, day, date) {
           } else if (
             JSON.parse(localStorage.getItem(year_month_date))[n].indexOf(
               getupStr
-            )
+            ) !== -1
           ) {
             index = JSON.parse(localStorage.getItem(year_month_date))[
               n
@@ -468,7 +468,7 @@ function get_calendar(year, month, day, date) {
           } else if (
             JSON.parse(localStorage.getItem(year_month_date))[n].indexOf(
               getupStr
-            )
+            ) !== -1
           ) {
             index = JSON.parse(localStorage.getItem(year_month_date))[
               n
