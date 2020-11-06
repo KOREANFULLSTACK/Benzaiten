@@ -1,0 +1,2 @@
+User-agent: *Allow:/
+Sitemap: https://onedaytodo.netlify.app/sitemap.xml
